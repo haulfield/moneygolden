@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  header.jumbotron.bg-inverse.text-xs-center.center-vertically(role='banner')
+    .container
+      h3.text-xs-center.m-b-3 Регистрируйся
+      form(class='form-signup', action='/signup', method='POST')
+        .row
+          .col-md-6.col-xl-3
+            .form-group.has-icon-left.form-control-email
+              label.sr-only(for='inputName') Email
+              input(type='text',name='username', class='form-control form-control-lg', id='inputEmail', placeholder='Email', autocomplete='off')
+          .col-md-6.col-xl-3
+            .form-group.has-icon-left.form-control-password
+              label.sr-only(for='inputEmail') пароль
+              input(type='password',name='password', class='form-control form-control-lg', id='inputPassword', placeholder='Password', autocomplete='off')
+          .col-md-6.col-xl-3
+            .form-group.has-icon-left.form-control-password
+              label.sr-only(for='inputPassword') потверждения пароля
+              input(type='password',name='passwordconf', class='form-control form-control-lg', id='inputPassword', placeholder='Password confirm', autocomplete='off')
+          .col-md-6.col-xl-3
+            .form-group
+              button.btn.btn-primary.btn-block(type='submit') зарегистрироватся
+        #message
+        if message
+          h1.text-center.error-message #{message}
+        label.c-input.c-checkbox
+          input(type='checkbox', checked='')
+          span.c-indicator
+          |  я согласен с
+          a(href='#') правилами сайта

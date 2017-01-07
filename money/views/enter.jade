@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  header.jumbotron.bg-inverse.text-xs-center.center-vertically(role='banner')
+    .container
+      h3.text-xs-center.m-b-3 Вход
+      form(class='form-signin', action='/login', method='POST')
+        .row
+          .col-md-6.col-xl-4
+            .form-group.has-icon-left.form-control-email
+              label.sr-only(for='inputName') Email
+              input(type='text',name='username', class='form-control form-control-lg', id='inputEmail', placeholder='Email', autocomplete='off')
+          .col-md-6.col-xl-4
+            .form-group.has-icon-left.form-control-password
+              label.sr-only(for='inputEmail') пароль
+              input(type='password',name='password', id='inputPassword', class='form-control form-control-lg', placeholder='Password', autocomplete='off')
+          .col-md-6.col-xl-4
+            .form-group
+              button.btn.btn-primary.btn-block(type='submit') войти
+      #message
+      if message
+        h1.text-center.error-message #{message}

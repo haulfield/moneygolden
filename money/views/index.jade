@@ -1,0 +1,213 @@
+extends layout
+
+block content
+    header.jumbotron.bg-inverse.text-xs-center.center-vertically(role='banner')
+      .container
+        h1.display-3 название
+        h2.m-b-3 стабильный, долгосрочный, заработок для всех инвесторов.
+        ul.nav.nav-inline.social-share
+          li.nav-item
+            a.nav-link(href='#')
+              span.icon-twitter
+              |  1024
+          li.nav-item
+            a.nav-link(href='#')
+              span.icon-facebook
+              |  562
+          li.nav-item
+            a.nav-link(href='#')
+              span.icon-linkedin
+              |  356
+    section.section-video.bg-inverse.text-xs-center.wp.wp-4
+      h3.sr-only Video
+      video#demo_video.video-js.vjs-default-skin.vjs-big-play-centered(controls='', poster='img/video-poster.jpg', data-setup='{}')
+    section.section-intro.bg-faded.text-xs-center
+      .container
+        h3.wp.wp-1 просто текст
+        p.lead.wp.wp-2 просто текст. просто текст. просто текст.
+        img.img-fluid.wp.wp-3(src='img/mock.png', alt='iPad mock')
+    section.section-features.text-xs-center
+      .container
+        .row
+          .col-md-4
+            .card
+              .card-block
+                span.icon-pen.display-1
+                h4.card-title просто текст.
+                h6.card-subtitle.text-muted просто текст.
+                p.card-text просто текст.просто текст.просто текст. 
+          .col-md-4
+            .card
+              .card-block
+                span.icon-thunderbolt.display-1
+                h4.card-title просто текст.
+                h6.card-subtitle.text-muted просто текст.
+                p.card-text просто текст.просто текст.просто текст. просто текст.
+          .col-md-4
+            .card.m-b-0
+              .card-block
+                span.icon-heart.display-1
+                h4.card-title просто текст.
+                h6.card-subtitle.text-muted просто текст.
+                p.card-text просто текст.просто текст. просто текст. просто текст.
+    section.section-pricing.bg-faded.text-xs-center
+      .container
+        h3 ВЫБЕРИТЕ ТАРИФНЫЙ ПЛАН
+        .row.p-y-3
+          .col-md-3.p-t-md.wp.wp-5
+            .card.pricing-box
+              .card-header.text-uppercase
+                | 5%+5% ЗА 24 ЧАСА, НА 1 ДЕНЬ
+              .card-block
+                h4.card-text
+                  sup.pricing-box-currency.price1 ⃏
+                  span.pricing-box-price 100-2000
+              a.btn.btn-primary-outline(href='#') Начать
+          .col-md-3.stacking-top
+            .card.pricing-box.pricing-best.p-x-0
+              .card-header.text-uppercase
+                | 10%+10% В СУТКИ, НА 2 ДНЯ
+              .card-block
+                h4.card-text
+                  sup.pricing-box-currency.price1 ⃏
+                  span.pricing-box-price 2000-25000
+              a.btn.btn-primary(href='#') Начать
+          .col-md-3.stacking-top
+            .card.pricing-box.pricing-best.p-x-0
+              .card-header.text-uppercase
+                | 20%+20% В СУТКИ, НА 3 ДНЯ
+              .card-block
+                h4.card-text
+                  sup.pricing-box-currency.price1 ⃏
+                  span.pricing-box-price 25000-50000
+              a.btn.btn-primary(href='#') Начать
+          .col-md-3.p-t-md.wp.wp-6
+            .card.pricing-box
+              .card-header.text-uppercase
+                | 50%+50% В СУТКИ НА 1 ДЕНЬ
+              .card-block
+                h4.card-text
+                  sup.pricing-box-currency.price1 ⃏
+                  span.pricing-box-price 50000-200000
+              a.btn.btn-primary-outline(href='#') Начать
+    section.section-testimonials.text-xs-center.bg-inverse
+      .container
+        h3.sr-only Отзывы
+        #carousel-testimonials.carousel.slide(data-ride='carousel', data-interval='0')
+          .carousel-inner(role='listbox')
+            .carousel-item.active
+              blockquote.blockquote
+                img.img-circle(src='img/face1.jpg', height='80', width='80', alt='Avatar')
+                p.h3 просто текст.
+                footer Dmitry Fadeyev
+            .carousel-item
+              blockquote.blockquote
+                img.img-circle(src='img/face2.jpg', height='80', width='80', alt='Avatar')
+                p.h3 просто текст.
+                footer David Carson
+            .carousel-item
+              blockquote.blockquote
+                img.img-circle(src='img/face3.jpg', height='80', width='80', alt='Avatar')
+                p.h3 просто текст.
+                footer Frank Chimero
+            .carousel-item
+              blockquote.blockquote
+                img.img-circle(src='img/face4.jpg', height='80', width='80', alt='Avatar')
+                p.h3 просто текст.
+                footer Joel Fisher
+            .carousel-item
+              blockquote.blockquote
+                img.img-circle(src='img/face5.jpg', height='80', width='80', alt='Avatar')
+                p.h3 просто текст.
+                footer E.H. Gombrich
+          ol.carousel-indicators
+            li.active
+              img.img-fluid.img-circle(src='img/face1.jpg', alt='Navigation avatar', data-target='#carousel-testimonials', data-slide-to='0')
+            li
+              img.img-fluid.img-circle(src='img/face2.jpg', alt='Navigation avatar', data-target='#carousel-testimonials', data-slide-to='1')
+            li
+              img.img-fluid.img-circle(src='img/face3.jpg', alt='Navigation avatar', data-target='#carousel-testimonials', data-slide-to='2')
+            li
+              img.img-fluid.img-circle(src='img/face4.jpg', alt='Navigation avatar', data-target='#carousel-testimonials', data-slide-to='3')
+            li
+              img.img-fluid.img-circle(src='img/face5.jpg', alt='Navigation avatar', data-target='#carousel-testimonials', data-slide-to='4')
+    section.section-text
+      .container
+        h3.text-xs-center просто текст.
+        .row.p-y-3
+          .col-md-5
+            p.wp.wp-7
+              | просто текст.просто текст.просто текст.просто текст.просто текст.просто текст.просто текст.
+          .col-md-5.col-md-offset-2.separator-x
+            p.wp.wp-8 просто текст.  просто текст.просто текст. просто текст. просто текст.
+    section.section-news
+      .container
+        h3.sr-only News
+        .bg-inverse
+          .row
+            .col-md-6.p-r-0
+              figure.has-light-mask.m-b-0.image-effect
+                img.img-fluid(src='https://images.unsplash.com/photo-1442328166075-47fe7153c128?q=80&fm=jpg&w=1080&fit=max', alt='Article thumbnail')
+            .col-md-6.p-l-0
+              article.center-block
+                span.label.label-info просто текст.
+                br
+                h5
+                  a(href='#')
+                    | просто текст. просто текст. просто текст. просто текст. просто текст.
+                    span.icon-arrow-right
+                p.m-b-0
+                  a(href='#')
+                    span.label.label-default.text-uppercase
+                      span.icon-tag
+                      |  просто текст.
+                  a(href='#')
+                    span.label.label-default.text-uppercase
+                      span.icon-time
+                      |  просто текст.
+          .row
+            .col-md-6.col-md-push-6.p-l-0
+              figure.has-light-mask.m-b-0.image-effect
+                img.img-fluid(src='https://images.unsplash.com/photo-1434394673726-e8232a5903b4?q=80&fm=jpg&w=1080&fit=max', alt='Article thumbnail')
+            .col-md-6.col-md-pull-6.p-r-0
+              article.center-block
+                span.label.label-info просто текст.
+                br
+                h5
+                  a(href='#')
+                    | просто текст. просто текст. просто текст. просто текст. просто текст. 
+                    span.icon-arrow-right
+                p.m-b-0
+                  a(href='#')
+                    span.label.label-default.text-uppercase
+                      span.icon-tag
+                      |  просто текст.
+                  a(href='#')
+                    span.label.label-default.text-uppercase
+                      span.icon-time
+                      |  просто текст.
+    section.section-signup.bg-faded
+      .container
+        h3.text-xs-center.m-b-3 Регистрируйся
+        form(class='form-signup', action='/signup', method='POST')
+          .row
+            .col-md-6.col-xl-3
+              .form-group.has-icon-left.form-control-email
+                label.sr-only(for='inputName') Email
+                input(type='text',name='username', class='form-control form-control-lg', id='inputEmail', placeholder='Email', autocomplete='off')
+            .col-md-6.col-xl-3
+              .form-group.has-icon-left.form-control-password
+                label.sr-only(for='inputEmail') пароль
+                input(type='password',name='password', class='form-control form-control-lg', id='inputPassword', placeholder='Password', autocomplete='off')
+            .col-md-6.col-xl-3
+              .form-group.has-icon-left.form-control-password
+                label.sr-only(for='inputPassword') потверждения пароля
+                input(type='password',name='passwordconf', class='form-control form-control-lg', id='inputPassword', placeholder='Password confirm', autocomplete='off')
+            .col-md-6.col-xl-3
+              .form-group
+                button.btn.btn-primary.btn-block(type='submit') зарегистрироватся
+          label.c-input.c-checkbox
+            input(type='checkbox', checked='')
+            span.c-indicator
+            |  я согласен с
+            a(href='#') правилами сайта

@@ -1,0 +1,75 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    title lp
+    meta(name='description', content='A free HTML template and UI Kit built on Bootstrap')
+    meta(name='keywords', content='free html template, bootstrap, ui kit, sass')
+    meta(name='author', content='Peter Finlan and Taty Grassini Codrops')
+    link(rel='apple-touch-icon', sizes='57x57', href='img/favicon/apple-touch-icon-57x57.png')
+    link(rel='apple-touch-icon', sizes='60x60', href='img/favicon/apple-touch-icon-60x60.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='img/favicon/apple-touch-icon-72x72.png')
+    link(rel='apple-touch-icon', sizes='76x76', href='img/favicon/apple-touch-icon-76x76.png')
+    link(rel='apple-touch-icon', sizes='114x114', href='img/favicon/apple-touch-icon-114x114.png')
+    link(rel='apple-touch-icon', sizes='120x120', href='img/favicon/apple-touch-icon-120x120.png')
+    link(rel='apple-touch-icon', sizes='144x144', href='img/favicon/apple-touch-icon-144x144.png')
+    link(rel='apple-touch-icon', sizes='152x152', href='img/favicon/apple-touch-icon-152x152.png')
+    link(rel='apple-touch-icon', sizes='180x180', href='img/favicon/apple-touch-icon-180x180.png')
+    link(rel='icon', type='image/png', href='img/favicon/favicon-32x32.png', sizes='32x32')
+    link(rel='icon', type='image/png', href='img/favicon/android-chrome-192x192.png', sizes='192x192')
+    link(rel='icon', type='image/png', href='img/favicon/favicon-96x96.png', sizes='96x96')
+    link(rel='icon', type='image/png', href='img/favicon/favicon-16x16.png', sizes='16x16')
+    link(rel='manifest', href='img/favicon/manifest.json')
+    link(rel='shortcut icon', href='img/favicon/favicon.ico')
+    meta(name='msapplication-TileColor', content='#663fb5')
+    meta(name='msapplication-TileImage', content='img/favicon/mstile-144x144.png')
+    meta(name='msapplication-config', content='img/favicon/browserconfig.xml')
+    meta(name='theme-color', content='#663fb5')
+    link(rel='stylesheet', href='css/landio.css')
+    link(href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic', rel='stylesheet', type='text/css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    script(src='js/landio.min.js')
+  body
+    nav.navbar.navbar1.navbar-dark.bg-inverse.bg-inverse-custom.navbar-fixed-top
+      .container
+        a.navbar-brand(href='#')
+          span.icon-logo
+          span.sr-only название
+        a.navbar-toggler.hidden-md-up.pull-xs-right(data-toggle='collapse', href='#collapsingNavbar', aria-expanded='false', aria-controls='collapsingNavbar')
+          | ☰
+        a.navbar-toggler.navbar-toggler-custom.hidden-md-up.pull-xs-right(data-toggle='collapse', href='#collapsingMobileUser', aria-expanded='false', aria-controls='collapsingMobileUser')
+          span.icon-user
+        #collapsingNavbar.collapse.navbar-toggleable-custom(role='tabpanel', aria-labelledby='collapsingNavbar')
+          ul.nav.navbar-nav.pull-xs-right
+            li.nav-item.dropdown.hidden-sm-down.textselect-off
+              a#dropdownMenu2.nav-link.dropdown-toggle.nav-dropdown-user(data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                img.img-circle(src='img/face5.jpg', height='40', width='40', alt='Avatar')
+                span.icon-caret-down
+              .dropdown-menu.dropdown-menu-right.dropdown-menu-user.dropdown-menu-animated(aria-labelledby='dropdownMenu2')
+                .media
+                  .media-left
+                    img.img-circle(src='img/face5.jpg', height='60', width='60', alt='Avatar')
+                  .media-body.media-middle
+                    h5.media-heading Joel Fisher
+                    h6 #{user.username}
+                a.dropdown-item.text-uppercase(href='#') кабинет
+                a.dropdown-item.text-uppercase(href='#') вклады
+                a.dropdown-item.text-uppercase(href='#') пополнить
+                a.dropdown-item.text-uppercase(href='#') вывести
+                a.dropdown-item.text-uppercase(href='#') настройки
+                a.dropdown-item.text-uppercase.text-muted(href='/logout') выйти
+        #collapsingMobileUser.collapse.navbar-toggleable-custom.dropdown-menu-custom.p-x-1.hidden-md-up(role='tabpanel', aria-labelledby='collapsingMobileUser')
+          .media.m-t-1
+            .media-left
+              img.img-circle(src='img/face5.jpg', height='60', width='60', alt='Avatar')
+            .media-body.media-middle
+              h5.media-heading Joel Fisher
+              h6 #{user.username}
+          a.dropdown-item.text-uppercase(href='#') кабинет
+          a.dropdown-item.text-uppercase(href='#') вклады
+          a.dropdown-item.text-uppercase(href='#') пополнить
+          a.dropdown-item.text-uppercase(href='#') вывести
+          a.dropdown-item.text-uppercase(href='#') настройки
+          a.dropdown-item.text-uppercase.text-muted(href='logout') выйти
