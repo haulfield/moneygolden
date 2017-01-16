@@ -36,9 +36,9 @@ var server = http.createServer(app);
  */
 
 httpsServer.listen(443);
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+//server.listen(port);
+httpsServer.on('error', onError);
+httpsServer.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.
