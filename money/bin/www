@@ -29,8 +29,10 @@ var credentials = {key: privateKey, cert: certificate};
 var httpsServer = https.createServer(credentials, app);
 
 
-var server = http.createServer(app);
-
+var server = http.createServer();
+server.get('*',function(req,res){  
+    res.redirect('https://'+req.headers['host']+req.url)
+})
 /**
  * Listen on provided port, on all network interfaces.
  */
