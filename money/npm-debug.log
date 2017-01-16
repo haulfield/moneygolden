@@ -1,7 +1,7 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'start' ]
-2 info using npm@3.10.8
-3 info using node@v6.8.1
+2 info using npm@4.1.1
+3 info using node@v7.4.0
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info lifecycle money@0.0.0~prestart: money@0.0.0
 6 silly lifecycle money@0.0.0~prestart: no script for prestart, continuing
@@ -14,20 +14,20 @@
 13 info lifecycle money@0.0.0~start: Failed to exec start script
 14 verbose stack Error: money@0.0.0 start: `node ./bin/www`
 14 verbose stack Exit status 1
-14 verbose stack     at EventEmitter.<anonymous> (/usr/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+14 verbose stack     at EventEmitter.<anonymous> (/usr/lib/node_modules/npm/lib/utils/lifecycle.js:279:16)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at EventEmitter.emit (events.js:191:7)
 14 verbose stack     at ChildProcess.<anonymous> (/usr/lib/node_modules/npm/lib/utils/spawn.js:40:14)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at ChildProcess.emit (events.js:191:7)
-14 verbose stack     at maybeClose (internal/child_process.js:877:16)
+14 verbose stack     at maybeClose (internal/child_process.js:885:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 15 verbose pkgid money@0.0.0
 16 verbose cwd /home/haulfield/moneygolden/money
-17 error Linux 4.7.6-1-ARCH
+17 error Linux 4.8.13-1-ARCH
 18 error argv "/usr/bin/node" "/usr/bin/npm" "start"
-19 error node v6.8.1
-20 error npm  v3.10.8
+19 error node v7.4.0
+20 error npm  v4.1.1
 21 error code ELIFECYCLE
 22 error money@0.0.0 start: `node ./bin/www`
 22 error Exit status 1
