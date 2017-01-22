@@ -5,6 +5,8 @@ block content
       .container
         h1.display-3 moneygolden
         h2.m-b-3 стабильный, долгосрочный, заработок для всех инвесторов.
+        if message
+          h2.text-center.error-message #{message}
         ul.nav.nav-inline.social-share
           li.nav-item
             a.nav-link(href='#')

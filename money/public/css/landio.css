@@ -11,5 +11,10 @@
 	display: none;
 }
 .logoM{
-	height: 75px;
+	height: 80px;
+}
+.cWhite{
+
+	color:#717171;
+	background: #303030;
 }

@@ -1,0 +1,24 @@
+extends rlayout
+
+block content
+  header.jumbotron1.bg-inverse.text-xs-center.center-vertically(role='banner')
+    .container.cWhite
+      h1 Вывод
+      form
+        p       
+          | С платежной системы*:
+          select(size='1', name='hero')
+            option(disabled='', selected='') -Выберите-
+            option(value='t1') qiwi
+            option(value='t2') visa/master card
+            option(value='t3') yandex money
+            option(value='t4') sberbank
+        p
+          | Сумма:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          input#inputText(type='text', placeholder='', autocomplete='off')
+        p
+          | Комиссия: 
+          span 0
+        p
+          | На Ваш счет будет выведена сумма: 
+          span 0

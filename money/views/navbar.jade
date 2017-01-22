@@ -1,0 +1,16 @@
+nav.navbar.navbar-dark.bg-inverse.bg-inverse-custom.navbar-fixed-top
+  .container
+    a.navbar-brand(href='#')
+      img.logoM(src='/img/mg_logo.png')
+    span.sr-only moneygolden
+    a.navbar-toggler.hidden-md-up.pull-xs-right(data-toggle='collapse', href='#collapsingNavbar', aria-expanded='false', aria-controls='collapsingNavbar')
+      | ☰
+    a.navbar-toggler.navbar-toggler-custom.hidden-md-up.pull-xs-right(data-toggle='collapse', href='#collapsingMobileUser', aria-expanded='false', aria-controls='collapsingMobileUser')
+    span.icon-user
+    #collapsingNavbar.collapse.navbar-toggleable-custom(role='tabpanel', aria-labelledby='collapsingNavbar')
+      ul.nav.navbar-nav.pull-xs-right
+        li.nav-item.nav-item-toggable
+          a.nav-link(href='/signup') регистрация
+        li.nav-item.nav-item-toggable
+          a.nav-link(href='/signin') вход
+
