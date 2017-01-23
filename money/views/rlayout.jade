@@ -29,6 +29,7 @@ html(lang='en')
     meta(name='theme-color', content='#663fb5')
     link(rel='stylesheet', href='/css/landio.css')
     link(href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic', rel='stylesheet', type='text/css')
+    <script>function Change() {document.getElementsByName('oppa')[0].style.display = 'inline';document.getElementsByName('ik_am')[0].value=document.getElementsByName('ourfield')[0].value;document.getElementsByName('comission')[0].innerHTML=document.getElementsByName('ourfield')[0].value*0.015;document.getElementsByName('balans')[0].innerHTML=document.getElementsByName('ourfield')[0].value*1.015;}</script>
   body
     //
       Navigation
@@ -53,7 +54,7 @@ html(lang='en')
                   .media-left
                     img.img-circle(src='/img/user-one.png', height='60', width='60', alt='Avatar')
                   .media-body.media-middle
-                    h5.media-heading Joel Fisher
+                    h5.media-heading #{user.money} UAH
                     h6 #{user.username}
                 a.dropdown-item.text-uppercase(href='/my') кабинет
                 a.dropdown-item.text-uppercase(href='/my/vklad') вклады
