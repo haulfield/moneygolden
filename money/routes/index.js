@@ -37,22 +37,23 @@ module.exports = function(passport){
         res.render('take', { user: req.user });
     });
     
-    router.post('/my/success', isAuthenticated, function(req, res){
+    router.get('/my/success', isAuthenticated, function(req, res){
         req.flash('message', "success");
         res.redirect('/my') ;
     });
 
-    router.post('/my/oops', isAuthenticated, function(req, res){
+    router.get('/my/oops', isAuthenticated, function(req, res){
         req.flash('message', "fail");
         res.redirect('/my') ;
     });
 
-    router.post('/my/wait', isAuthenticated, function(req, res){
+    router.get('/my/wait', isAuthenticated, function(req, res){
         req.flash('message', "wait");
         res.redirect('/my') ;
     });
     
     router.post('/my/status', isAuthenticated, function(req, res){
+        console.log("ANTIHAYP");
         var secret_key="I7fBuUGbIjBtqWn9";
         var ik_shop_id="587d41b33c1eaf0b318b456f";
         if(ik_shop_id==req.param('ik_shop_id') && req.param('ik_payment_state') == "success"){
