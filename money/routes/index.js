@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Put = require("../models/account")
+var News = require("../models/news")
 var User = require("../models/user")
 var isAuthenticated = function (req, res, next) {
     if (req.isAuthenticated())
@@ -107,6 +108,31 @@ module.exports = function(passport){
         failureRedirect: '/signup',
         failureFlash : true 
     }));
- 
+
+    router.get('/news/', isAuthenticated, function(req, res){
+        var fluffy = new News({ name: 'fluffy', img: 'no', text: 'blablabla' });
+//        fluffy.save(function (err, fluffy) {
+//            if (err) return console.error(err);
+//        });
+        News.find({}, function(err, newss){
+            res.render('allnews', {news: newss, user: req.user});
+        });
+    });
+
+    router.get('/news/:name', isAuthenticated, function(req, res){
+        console.log(req.params.name);
+        News.findOne({name: req.params.name}, function(err, newww){
+            res.render('newsone', {neww: newww, user: req.user}); 
+        });
+    });
+
+    router.post('/news/:id/update', isAuthenticated, function(req, res){
+        
+    });
+
+    router.post('/news/create/', isAuthenticated, function(req, res){
+        
+    });
+    
     return router;
 }

@@ -1,0 +1,19 @@
+extends rlayout
+
+block content
+  section.section-news.andd
+    .container
+      h3.sr-only News
+      .bg-inverse
+        figure.has-light-mask.m-b-0.image-effect.hgf
+          img.img-fluid(src='#{neww.img}', alt='')
+        .row.ldc
+          span.label.label-info #{neww.name}
+          br
+          p.vfdr
+            | #{neww.text}
+          p.m-b-0
+            span.label.label-default.text-uppercase
+              span.icon-time
+              |  #{neww.date}
+        .row
