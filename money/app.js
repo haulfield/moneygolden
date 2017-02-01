@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var dbConfig = require('./db.js');
+var Static = require("./models/static")
 var mongoose = require('mongoose');
 var bCrypt = require('bcrypt-nodejs');
 var flash=require("connect-flash");
@@ -132,9 +133,17 @@ app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var inv = Math.floor(Math.random() * 5) + 1;
+    var pt = Math.floor(Math.random() * 20000) + 1;
+    var tk = Math.floor(Math.random() * 3000) + 1;
+        Static.findOneAndUpdate({}, {$inc:{investor:inv, put: pt, take:tk}},function(err, doc){
+            if(err){
+                console.log("Something wrong when updating data!");
+            }
+        });
+        Static.find({}, function(err, stats){
+                res.render('404',{investor: parseInt(stats[0].investor), put: stats[0].put, take: stats[0].take});
+        });
 });
 
 // error handler

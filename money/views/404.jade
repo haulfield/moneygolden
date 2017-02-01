@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  header.jumbotron.bg-inverse.text-xs-center.center-vertically(role='banner')
+    .container
+      h1.display-3 Ошибка 404
+      h2.m-b-3 Проверьте правильность url, данной страницы не существует.
+      ul.nav.nav-inline.social-share
+        li.nav-item
+          | Инвесторов: #{investor}
+        li.nav-item
+          | Вклад: #{put} руб.
+        li.nav-item
+          | Вывод: #{take} руб.

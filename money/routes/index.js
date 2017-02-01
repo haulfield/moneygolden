@@ -3,6 +3,7 @@ var router = express.Router();
 var Put = require("../models/account")
 var News = require("../models/news")
 var User = require("../models/user")
+var Static = require("../models/static")
 var isAuthenticated = function (req, res, next) {
     if (req.isAuthenticated())
         return next();
@@ -14,8 +15,23 @@ module.exports = function(passport){
     
     /* GET login page. */
     router.get('/', function(req, res) {
+        
         // Display the Login page with any flash message, if any
-        res.render('index', { message: req.flash('message'), user: req.user});
+        var inv = Math.floor(Math.random() * 5) + 1;
+        var pt = Math.floor(Math.random() * 20000) + 1;
+        var tk = Math.floor(Math.random() * 3000) + 1;
+        Static.findOneAndUpdate({}, {$inc:{investor:inv, put: pt, take:tk}},function(err, doc){
+            if(err){
+                console.log("Something wrong when updating data!");
+            }
+        });
+        Static.find({}, function(err, stats){
+            News.find({}, function(err, newss){
+                console.log(stats[0].investor);
+                res.render('index', { message: req.flash('message'), user: req.user, news: newss, investor: parseInt(stats[0].investor), put: stats[0].put, take: stats[0].take});
+            }).limit(2);
+        });
+
     });
     
     router.get('/signin', function(req, res){
@@ -110,10 +126,6 @@ module.exports = function(passport){
     }));
 
     router.get('/news/', function(req, res){
-        var fluffy = new News({ name: 'fluffy', img: 'no', text: 'blablabla' });
-//        fluffy.save(function (err, fluffy) {
-//            if (err) return console.error(err);
-//        });
         News.find({}, function(err, newss){
             res.render('allnews', {news: newss});
         });

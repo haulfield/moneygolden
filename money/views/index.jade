@@ -9,17 +9,11 @@ block content
           h2.text-center.error-message #{message}
         ul.nav.nav-inline.social-share
           li.nav-item
-            a.nav-link(href='#')
-              span.icon-twitter
-              |  1024
+            | Инвесторов: #{investor}
           li.nav-item
-            a.nav-link(href='#')
-              span.icon-facebook
-              |  562
+            | Вклад: #{put} руб.
           li.nav-item
-            a.nav-link(href='#')
-              span.icon-linkedin
-              |  356
+            | Вывод: #{take} руб.
     section.section-video.bg-inverse.text-xs-center.wp.wp-4
       h3.sr-only Video
       video#demo_video.video-js.vjs-default-skin.vjs-big-play-centered(controls='', poster='img/video-poster.jpg', data-setup='{}')
@@ -59,38 +53,46 @@ block content
           .col-md-3.p-t-md.wp.wp-5
             .card.pricing-box
               .card-header.text-uppercase
-                | 5%+5% ЗА 24 ЧАСА, НА 1 ДЕНЬ
+                | Start invest
               .card-block
                 h4.card-text
                   sup.pricing-box-currency.price1 ⃏
-                  span.pricing-box-price 100-2000
+                  span.pricing-box-price 150-5000
+              ul.list-group.list-group-flush.p-x
+                li.list-group-item На один день 4% начисление 
               a.btn.btn-primary-outline(href='#') Начать
           .col-md-3.stacking-top
             .card.pricing-box.pricing-best.p-x-0
               .card-header.text-uppercase
-                | 10%+10% В СУТКИ, НА 2 ДНЯ
+                | Invest partner
               .card-block
                 h4.card-text
                   sup.pricing-box-currency.price1 ⃏
-                  span.pricing-box-price 2000-25000
+                  span.pricing-box-price 5000-10000
+              ul.list-group.list-group-flush.p-x
+                li.list-group-item На один день 16% начисление 
               a.btn.btn-primary(href='#') Начать
           .col-md-3.stacking-top
             .card.pricing-box.pricing-best.p-x-0
               .card-header.text-uppercase
-                | 20%+20% В СУТКИ, НА 3 ДНЯ
+                | Gold Investor
               .card-block
                 h4.card-text
                   sup.pricing-box-currency.price1 ⃏
-                  span.pricing-box-price 25000-50000
+                  span.pricing-box-price 10000-15000
+              ul.list-group.list-group-flush.p-x
+                li.list-group-item На один день 38% начисление 
               a.btn.btn-primary(href='#') Начать
           .col-md-3.p-t-md.wp.wp-6
             .card.pricing-box
               .card-header.text-uppercase
-                | 50%+50% В СУТКИ НА 1 ДЕНЬ
+                | Platinum Invest
               .card-block
                 h4.card-text
                   sup.pricing-box-currency.price1 ⃏
-                  span.pricing-box-price 50000-200000
+                  span.pricing-box-price 15000-25000
+              ul.list-group.list-group-flush.p-x
+                li.list-group-item На один день 81% начисление 
               a.btn.btn-primary-outline(href='#') Начать
     section.section-testimonials.text-xs-center.bg-inverse
       .container
@@ -100,28 +102,28 @@ block content
             .carousel-item.active
               blockquote.blockquote
                 img.img-circle(src='img/face1.jpg', height='80', width='80', alt='Avatar')
-                p.h3 просто текст.
-                footer Dmitry Fadeyev
+                p.h3 Выплаты получил, доволен. Собираюсь сотрудничать дальше.
+                footer Михаил Чапаев
             .carousel-item
               blockquote.blockquote
                 img.img-circle(src='img/face2.jpg', height='80', width='80', alt='Avatar')
-                p.h3 просто текст.
-                footer David Carson
+                p.h3 До последнего не верил, но деньги пришли! Буду работать и дальше.
+                footer Павел Котов
             .carousel-item
               blockquote.blockquote
                 img.img-circle(src='img/face3.jpg', height='80', width='80', alt='Avatar')
-                p.h3 просто текст.
-                footer Frank Chimero
+                p.h3 Получил сегодня первую выплату. Решил сразу начать с 10000 руб.
+                footer Виктор Гаврилюк
             .carousel-item
               blockquote.blockquote
                 img.img-circle(src='img/face4.jpg', height='80', width='80', alt='Avatar')
-                p.h3 просто текст.
-                footer Joel Fisher
+                p.h3 От меня жирный плюс ребятам! Отработали четко и без сбоев. Будем сотрудничать дальше.
+                footer Артем Смирнов
             .carousel-item
               blockquote.blockquote
                 img.img-circle(src='img/face5.jpg', height='80', width='80', alt='Avatar')
-                p.h3 просто текст.
-                footer E.H. Gombrich
+                p.h3 Вложил деньги один раз и теперь каждый день получаю проценты.
+                footer Сергей Свиридов
           ol.carousel-indicators
             li.active
               img.img-fluid.img-circle(src='img/face1.jpg', alt='Navigation avatar', data-target='#carousel-testimonials', data-slide-to='0')
@@ -135,59 +137,46 @@ block content
               img.img-fluid.img-circle(src='img/face5.jpg', alt='Navigation avatar', data-target='#carousel-testimonials', data-slide-to='4')
     section.section-text
       .container
-        h3.text-xs-center просто текст.
-        .row.p-y-3
-          .col-md-5
-            p.wp.wp-7
-              | просто текст.просто текст.просто текст.просто текст.просто текст.просто текст.просто текст.
-          .col-md-5.col-md-offset-2.separator-x
-            p.wp.wp-8 просто текст.  просто текст.просто текст. просто текст. просто текст.
+        h3.text-xs-center Новости
     section.section-news
       .container
         h3.sr-only News
         .bg-inverse
+        each neww,i in news
           .row
-            .col-md-6.p-r-0
-              figure.has-light-mask.m-b-0.image-effect
-                img.img-fluid(src='https://images.unsplash.com/photo-1442328166075-47fe7153c128?q=80&fm=jpg&w=1080&fit=max', alt='Article thumbnail')
-            .col-md-6.p-l-0
-              article.center-block
-                span.label.label-info просто текст.
-                br
-                h5
-                  a(href='#')
-                    | просто текст. просто текст. просто текст. просто текст. просто текст.
-                    span.icon-arrow-right
-                p.m-b-0
-                  a(href='#')
-                    span.label.label-default.text-uppercase
-                      span.icon-tag
-                      |  просто текст.
-                  a(href='#')
-                    span.label.label-default.text-uppercase
-                      span.icon-time
-                      |  просто текст.
-          .row
-            .col-md-6.col-md-push-6.p-l-0
-              figure.has-light-mask.m-b-0.image-effect
-                img.img-fluid(src='https://images.unsplash.com/photo-1434394673726-e8232a5903b4?q=80&fm=jpg&w=1080&fit=max', alt='Article thumbnail')
-            .col-md-6.col-md-pull-6.p-r-0
-              article.center-block
-                span.label.label-info просто текст.
-                br
-                h5
-                  a(href='#')
-                    | просто текст. просто текст. просто текст. просто текст. просто текст. 
-                    span.icon-arrow-right
-                p.m-b-0
-                  a(href='#')
-                    span.label.label-default.text-uppercase
-                      span.icon-tag
-                      |  просто текст.
-                  a(href='#')
-                    span.label.label-default.text-uppercase
-                      span.icon-time
-                      |  просто текст.
+            a(href='/news/#{neww.name}')
+              if i%2==0
+                .col-md-6.p-r-0
+                  figure.has-light-mask.m-b-0.image-effect
+                    img.img-fluid(src='#{neww.img}', alt='Article thumbnail')
+                .col-md-6.p-l-0
+                  article.center-block
+                    span.label.label-info #{neww.name}
+                    br
+                    h5.vfdr
+                      | #{neww.preview}
+                      span.icon-arrow-right
+                    p.m-b-0
+                      a(href='#')
+                        span.label.label-default.text-uppercase
+                          span.icon-time
+                          |  #{prettyDate(neww.date)}
+              else
+                .col-md-6.col-md-push-6.p-l-0
+                  figure.has-light-mask.m-b-0.image-effect
+                    img.img-fluid(src='#{neww.img}', alt='Article thumbnail')
+                .col-md-6.col-md-pull-6.p-r-0
+                  article.center-block
+                    span.label.label-info #{neww.name}
+                    br
+                    h5.vfdr
+                      | #{neww.preview}
+                      span.icon-arrow-right
+                    p.m-b-0
+                      a(href='#')
+                        span.label.label-default.text-uppercase
+                          span.icon-time
+                          |  #{prettyDate(neww.date)}
     section.section-signup.bg-faded
       .container
         h3.text-xs-center.m-b-3 Регистрируйся

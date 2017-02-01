@@ -1,4 +1,12 @@
 doctype html
+-function prettyDate(dateString){
+    //if it's already a date object and not a string you don't need this line:
+    -var date = new Date(dateString);
+    -var d = date.getDate();
+    -var m = date.getMonth();
+    -var y = date.getFullYear();
+    -return d+'/'+m+'/'+y;
+-}
 html(lang='en')
   head
     meta(charset='utf-8')
