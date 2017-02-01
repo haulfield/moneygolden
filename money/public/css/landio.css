@@ -18,3 +18,49 @@
 	color:#717171;
 	background: #303030;
 }
+.m1{
+	width: 80%;
+
+}
+.m1 textarea{
+	width: 80%;
+	left: 12.5%;
+	position: relative;
+}
+.mans{
+	
+	
+	margin-left: 15%;
+}
+@media screen and (max-height: 800px) {
+   .m1{
+	width: 90%;
+
+}
+    .m1 textarea{
+	width: 100%;
+	left: 5%;
+	position: relative;
+
+}
+
+.logoM{
+	height: 50px;
+}
+}
+.gfd{
+	width: 50%;
+	margin-left: 25%;
+	text-align: center;
+}
+.andd{
+	margin-top: 180px;
+}
+
+.hgf{
+	max-height: 500px;
+	min-width: 100%;
+}
+.ldc{
+	padding: 5%;
+}

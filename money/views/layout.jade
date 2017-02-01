@@ -47,6 +47,8 @@ html(lang='en')
           #collapsingNavbar.collapse.navbar-toggleable-custom(role='tabpanel', aria-labelledby='collapsingNavbar')
             ul.nav.navbar-nav.pull-xs-right
               li.nav-item.nav-item-toggable
+                a.nav-link(href='/news') новости
+              li.nav-item.nav-item-toggable
                 a.nav-link(href='/signup') регистрация
               li.nav-item.nav-item-toggable
                 a.nav-link(href='/signin') вход
@@ -73,6 +75,7 @@ html(lang='en')
                     .media-body.media-middle
                       h5.media-heading Joel Fisher
                       h6 #{user.username}
+                  a.dropdown-item.text-uppercase(href='/news') новости
                   a.dropdown-item.text-uppercase(href='/my') кабинет
                   a.dropdown-item.text-uppercase(href='/my/vklad') вклады
                   a.dropdown-item.text-uppercase(href='/my/put') пополнить
@@ -85,6 +88,7 @@ html(lang='en')
               .media-body.media-middle
                 h5.media-heading Joel Fisher
                 h6 test@tester.com
+            a.dropdown-item.text-uppercase(href='/news') новости
             a.dropdown-item.text-uppercase(href='/my') кабинет
             a.dropdown-item.text-uppercase(href='/my/vklad') вклады
             a.dropdown-item.text-uppercase(href='/my/put') пополнить

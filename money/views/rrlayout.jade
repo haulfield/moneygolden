@@ -1,4 +1,12 @@
 doctype html
+-function prettyDate(dateString){
+    //if it's already a date object and not a string you don't need this line:
+    -var date = new Date(dateString);
+    -var d = date.getDate();
+    -var m = date.getMonth();
+    -var y = date.getFullYear();
+    -return d+'/'+m+'/'+y;
+-}
 html(lang='en')
   head
     meta(charset='utf-8')
@@ -43,41 +51,6 @@ html(lang='en')
           | ☰
         a.navbar-toggler.navbar-toggler-custom.hidden-md-up.pull-xs-right(data-toggle='collapse', href='#collapsingMobileUser', aria-expanded='false', aria-controls='collapsingMobileUser')
           span.icon-user
-        #collapsingNavbar.collapse.navbar-toggleable-custom(role='tabpanel', aria-labelledby='collapsingNavbar')
-          ul.nav.navbar-nav.pull-xs-right
-            li.nav-item.dropdown.hidden-sm-down.textselect-off
-              a#dropdownMenu2.nav-link.dropdown-toggle.nav-dropdown-user(data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-                img.img-circle(src='/img/user-one.png', height='50', width='50', alt='Avatar')
-                span.icon-caret-down
-              .dropdown-menu.dropdown-menu-right.dropdown-menu-user.dropdown-menu-animated(aria-labelledby='dropdownMenu2')
-                .media
-                  .media-left
-                    img.img-circle(src='/img/user-one.png', height='60', width='60', alt='Avatar')
-                  .media-body.media-middle
-                    h5.media-heading #{user.money} UAH
-                    h6 #{user.username}
-                a.dropdown-item.text-uppercase(href='/news') новости
-                a.dropdown-item.text-uppercase(href='/my') кабинет
-                a.dropdown-item.text-uppercase(href='/my/vklad') вклады
-                a.dropdown-item.text-uppercase(href='/my/put') пополнить
-                a.dropdown-item.text-uppercase(href='/my/take') вывести
-                a.dropdown-item.text-uppercase.text-muted(href='/logout') выйти
-        #collapsingMobileUser.collapse.navbar-toggleable-custom.dropdown-menu-custom.p-x-1.hidden-md-up(role='tabpanel', aria-labelledby='collapsingMobileUser')
-          .media.m-t-1
-            .media-left
-              img.img-circle(src='/img/user-one.png', height='60', width='60', alt='Avatar')
-            .media-body.media-middle
-              h5.media-heading Joel Fisher
-              h6 test@tester.com
-          a.dropdown-item.text-uppercase(href='/news') новости
-          a.dropdown-item.text-uppercase(href='/my') кабинет
-          a.dropdown-item.text-uppercase(href='/my/vklad') вклады
-          a.dropdown-item.text-uppercase(href='/my/put') пополнить
-          a.dropdown-item.text-uppercase(href='/my/take') вывести
-          a.dropdown-item.text-uppercase.text-muted(href='/logout') выйти
-    //
-      Hero Section
-      ==================================================
     block content
     //
       Footer

@@ -109,20 +109,20 @@ module.exports = function(passport){
         failureFlash : true 
     }));
 
-    router.get('/news/', isAuthenticated, function(req, res){
+    router.get('/news/', function(req, res){
         var fluffy = new News({ name: 'fluffy', img: 'no', text: 'blablabla' });
 //        fluffy.save(function (err, fluffy) {
 //            if (err) return console.error(err);
 //        });
         News.find({}, function(err, newss){
-            res.render('allnews', {news: newss, user: req.user});
+            res.render('allnews', {news: newss});
         });
     });
 
-    router.get('/news/:name', isAuthenticated, function(req, res){
+    router.get('/news/:name',  function(req, res){
         console.log(req.params.name);
         News.findOne({name: req.params.name}, function(err, newww){
-            res.render('newsone', {neww: newww, user: req.user}); 
+            res.render('newsone', {neww: newww}); 
         });
     });
 

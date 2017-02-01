@@ -1,4 +1,4 @@
-extends rlayout
+extends rrlayout
 
 block content
   section.section-news.andd
@@ -15,5 +15,5 @@ block content
           p.m-b-0
             span.label.label-default.text-uppercase
               span.icon-time
-              |  #{neww.date}
+              |  #{prettyDate(neww.date)}
         .row
