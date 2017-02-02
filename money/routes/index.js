@@ -17,9 +17,9 @@ module.exports = function(passport){
     router.get('/', function(req, res) {
         
         // Display the Login page with any flash message, if any
-        var inv = Math.floor(Math.random() * 5) + 1;
-        var pt = Math.floor(Math.random() * 20000) + 1;
-        var tk = Math.floor(Math.random() * 3000) + 1;
+        var inv = Math.floor(Math.random() * 2) + 1;
+        var pt = Math.floor(Math.random() * 1000) + 1;
+        var tk = Math.floor(Math.random() * 50) + 1;
         Static.findOneAndUpdate({}, {$inc:{investor:inv, put: pt, take:tk}},function(err, doc){
             if(err){
                 console.log("Something wrong when updating data!");
@@ -70,25 +70,26 @@ module.exports = function(passport){
     });
     
     router.post('/my/status', isAuthenticated, function(req, res){
-        console.log("ANTIHAYP");
         var secret_key="I7fBuUGbIjBtqWn9";
         var ik_shop_id="587d41b33c1eaf0b318b456f";
-        if(ik_shop_id==req.param('ik_shop_id') && req.param('ik_payment_state') == "success"){
-            myamount = req.param("ik_payment_amount");
+        console.log("ANTIHAYP");
+        if(ik_shop_id==req.body.ik_shop_id && req.body.ik_payment_state == "success"){
+            var myamount = req.body.ik_payment_amount;
+            console.log("ANTIHAYP2");
             var putting = new Put({
                 user: req.user,
                 amount: myamount
             });
+            console.log("ANTIHAYP3");
             putting.save(function(err){
                 if(err) res.send(404);
-            })
-            User.find({username: req.user.username}, function(err, usr){
-                if(err) res.send(404);
-                usr.money += myamount;
-                usr.save(function(err){
-                    if(err) res.send(404);
-                });
             });
+            User.findOneAndUpdate({username: req.user.username}, {$inc:{money:myamount}},function(err, doc){
+                if(err){
+                    console.log("Something wrong when updating data!");
+                }
+            });
+            console.log("ANTIHAYP6");
             res.send(200);
         }else
             res.send(404)

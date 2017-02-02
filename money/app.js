@@ -133,9 +133,9 @@ app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var inv = Math.floor(Math.random() * 5) + 1;
-    var pt = Math.floor(Math.random() * 20000) + 1;
-    var tk = Math.floor(Math.random() * 3000) + 1;
+    var inv = Math.floor(Math.random() * 2) + 1;
+    var pt = Math.floor(Math.random() * 1000) + 1;
+    var tk = Math.floor(Math.random() * 50) + 1;
         Static.findOneAndUpdate({}, {$inc:{investor:inv, put: pt, take:tk}},function(err, doc){
             if(err){
                 console.log("Something wrong when updating data!");
